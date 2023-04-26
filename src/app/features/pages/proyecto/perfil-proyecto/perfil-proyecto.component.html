@@ -1,0 +1,12 @@
+
+<div class="row justify-content-center">
+    <div class="card text-white bg-primary mb-3  m-2"  style="max-width: 9rem;" *ngFor="let proyecto of proyectos">
+    
+      <div class="card-header mia text-center col-12 " >{{proyecto.nombre}}</div>
+      <div class="card-body justify-content-center row"  >
+        <img class="col-12 text-center"  src={{proyecto.imagen}} alt="">
+      </div>
+      <button [routerLink]="['/proyecto/detalles',proyecto.idProyecto]" class="btn btn-dark mb-1">Detalles</button>
+     
+    </div>
+</div> 

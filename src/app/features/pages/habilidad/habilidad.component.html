@@ -1,0 +1,19 @@
+<div class="row justify-content-center mt-4">
+    <table  class="col-4">
+        <thead>
+            <tr> 
+                <th class="col-2 text-center ">Nombre</th>
+                <th class="col-2 text-center">Editara</th>
+                <th class="col-2 text-center">Eliminar</th>
+            </tr>
+        </thead> 
+        <tbody>
+            <tr *ngFor="let habilidad of habilidades">
+                <td class="col-1 text-center m-1">{{habilidad.nombre}}</td>
+            
+                <td class="col-1 text-center "><button class=" m-1 botonCrear" name="editar"[routerLink]="['/habilidad/editar',habilidad.idHabilidad]">Editar</button></td>
+                <td class="col-1 text-center "><button class="m-1 botonEliminar" name="eliminar" (click)="borrar(habilidad)">Eliminar</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

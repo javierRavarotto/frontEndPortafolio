@@ -1,0 +1,21 @@
+<div class="row justify-content-center mt-5">
+   <b class="card-header  col-12 text-center">{{titulo}}</b>
+   <div class="row justify-content-center">
+      <form class="col-12 text-center">
+         <div class="m-2 col-10  ">
+            <label class="col-2 text-end m-2" for="nombre "> Nombre</label>
+            <input class="col-2" type="text" [(ngModel)]="habilidad.nombre" name="nombre">
+         </div>
+         <div class="m-2 col-10  ">
+            <label class="col-2 text-end m-2" for="urlImagen">Url imagen</label>
+            <input class="col-2" type="text" [(ngModel)]="habilidad.urlImagen" name="urlImagen">
+         </div>
+         <div>
+            <button (click)="crear()" *ngIf="!habilidad.idHabilidad else elseBlock" class="botonCrear">Crear</button>
+            <ng-template #elseBlock>
+               <button (click)="actualizarHabilidad()">Editar</button>
+            </ng-template>
+         </div>
+      </form>
+   </div>
+</div>

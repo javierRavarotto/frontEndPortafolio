@@ -1,0 +1,71 @@
+<div class="row justify-content-center mt-5">
+   <b class="card-header col-12 text-center">{{titulo}}</b>
+   <div class="row justify-content-center">
+      <form class="col-12 text-center">
+         <div class="m-2 col-10  ">
+            <label class="col-2 text-end m-2" for="nombre"> Nombre</label>
+            <input type="text" class="col-2"  [(ngModel)]="estudio.nombre" name="nombre">
+         </div>
+         <div class="m-2 col-10  ">
+            <label class="col-2 text-end m-2"  for="horasCursadas "> Horas cursadas</label>
+           
+               <input type="text" class="col-2"   [(ngModel)]="estudio.horasCursadas" name="horasCursadas">
+            
+         </div>
+         <div class="m-2 col-10  ">
+            <label class="col-2 text-end m-2"  for="urlImagenCertificado"> Url imagen certificado</label>
+           
+               <input type="text"  class="col-2"  [(ngModel)]="estudio.urlCertificado" name="urlImagenCertificado">
+            
+         </div>
+         <div class="m-2 col-10  ">
+            <label class="col-2 text-end m-2"  for="fechaInicio "> Fecha inicio</label>
+          
+               <input type="date" class="col-2"   [(ngModel)]="estudio.fechaInicio" name="fechaInicio">
+         
+         </div>
+         <div class="m-2 col-10  ">
+            <label class="col-2 text-end m-2"  for="fechaFin "> Fecha fin</label>
+          
+               <input type="date" class="col-2"   [(ngModel)]="estudio.fechaFin" name="fechaFin">
+             
+         </div>
+         <div class="m-2 col-10  ">
+            <label class="col-2 text-end m-2"  for="estado "> Estado</label>
+       
+               <input type="text"  class="col-2"  [(ngModel)]="estudio.estado" name="estado">
+          
+         </div>
+         <div class="m-2 col-10  ">
+            <label class="col-2 text-end m-2"  for="establecimiento "> Establecimiento</label>
+           
+               <input type="text" class="col-2"   [(ngModel)]="estudio.establecimiento" name="establecimiento">
+            
+         </div>
+         <div class="m-2 col-12 text-start ">
+            <div class="col-10 text-center">
+            <label  class="col-3.2  text-center m-1 " for="urlImagenEstablecimiento"> Url imagen establecimiento</label>
+           
+               <input type="text"  class="col-2 text-start"  [(ngModel)]="estudio.urlImagen"  name="urlImagenEstablecimiento">
+            </div>
+         </div>
+         <div class="m-2 col-10  ">
+            <label class="col-2 text-end m-2"  for="descripcion"> Descripcion</label>
+           
+               <input type="text"  class="col-2"  [(ngModel)]="estudio.descripcion" name="descripcion">
+           
+         </div>
+         <div>
+            <div>
+               <button class="botonCrear "  (click)="crear()" *ngIf="!estudio.idEstudio else elseBlock ">Crear</button>
+
+               <ng-template #elseBlock>
+
+                  <button (click)="actualizarEstudio()">Editar</button>
+
+               </ng-template>
+            </div>
+         </div>
+      </form>
+   </div>
+</div>
