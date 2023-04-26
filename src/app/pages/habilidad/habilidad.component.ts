@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Habilidad } from 'src/app/core/interface/habilidad';
+import { Habilidad } from 'src/app/core/entidades/habilidad';
 import {  HabilidadService } from 'src/app/core/servicios/habilidad.service';
 import swal from 'sweetalert2'
 @Component({

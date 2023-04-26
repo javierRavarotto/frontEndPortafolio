@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Proyecto } from 'src/app/core/interface/proyecto';
+import { Proyecto } from 'src/app/core/entidades/proyecto';
 import { ProyectoService } from 'src/app/core/servicios/proyecto.service';
 import Swal from 'sweetalert2';
 

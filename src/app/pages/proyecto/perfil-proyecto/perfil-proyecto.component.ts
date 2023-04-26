@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Proyecto } from 'src/app/core/interface/proyecto';
+import { Proyecto } from 'src/app/core/entidades/proyecto';
 import { ProyectoService } from 'src/app/core/servicios/proyecto.service';
 
 @Component({

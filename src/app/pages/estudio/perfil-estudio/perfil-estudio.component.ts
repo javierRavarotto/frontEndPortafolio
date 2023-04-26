@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Estudio } from 'src/app/core/interface/estudio';
+import { Estudio } from 'src/app/core/entidades/estudio';
 import { EstudioService } from 'src/app/core/servicios/estudio.service';
 
 @Component({

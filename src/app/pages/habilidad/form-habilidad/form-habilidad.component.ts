@@ -1,7 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, Validators ,FormControl,ReactiveFormsModule} from '@angular/forms';
 import { HabilidadComponent } from '../habilidad.component';
-import { Habilidad } from 'src/app/core/interface/habilidad';
+import { Habilidad } from 'src/app/core/entidades/habilidad';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { HabilidadService } from 'src/app/core/servicios/habilidad.service';

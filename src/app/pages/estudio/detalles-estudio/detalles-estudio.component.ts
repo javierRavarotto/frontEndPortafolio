@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Estudio } from 'src/app/core/interface/estudio';
+import { Estudio } from 'src/app/core/entidades/estudio';
 import { EstudioService } from 'src/app/core/servicios/estudio.service';
 
 @Component({
