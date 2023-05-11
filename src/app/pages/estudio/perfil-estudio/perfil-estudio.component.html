@@ -1,12 +1,13 @@
-
+<h3 class="text-center">Estudios</h3>
 <div class="row justify-content-center">
-    <div class="card text-white bg-primary mb-3  m-2"  style="max-width: 9rem;" *ngFor="let estudio of estudios">
+    <div class="contenedor mb-3 m-3 me-5 col-4"  style="max-width: 9rem;" *ngFor="let estudio of estudios">
     
-      <div class="card-header mia text-center col-12 " >{{estudio.nombre}}</div>
-      <div class="card-body justify-content-center row"  >
-        <img class="col-12 text-center"  src={{estudio.urlImagen}} alt="">
+      <div class="mia text-center col-12 titulo " >{{estudio.nombre}}</div>
+      <div class="justify-content-center row"  >
+        <img class="col-12 text-center imagen mt-2"  src={{estudio.urlImagen}} alt="">
       </div>
+      <div class="text-center m-2">
       <button [routerLink]="['/estudio/detalles',estudio.idEstudio]" class="btn btn-dark mb-1">Detalles</button>
-     
+    </div>
     </div>
 </div> 

@@ -19,6 +19,10 @@ import { PerfilEstudioComponent } from './pages/estudio/perfil-estudio/perfil-es
 import { DetallesEstudioComponent } from './pages/estudio/detalles-estudio/detalles-estudio.component';
 import { PerfilProyectoComponent } from './pages/proyecto/perfil-proyecto/perfil-proyecto.component';
 import { DetallesProyectoComponent } from './pages/proyecto/detalles-proyecto/detalles-proyecto.component';
+import { UsuarioComponent } from './pages/usuario/usuario.component';
+import { FormUsuarioComponent } from './pages/usuario/form-usuario/form-usuario.component';
+import { LoginUsuarioComponent } from './pages/usuario/login-usuario/login-usuario.component';
+import { InicioComponent } from './pages/inicio/inicio.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +38,11 @@ import { DetallesProyectoComponent } from './pages/proyecto/detalles-proyecto/de
     PerfilEstudioComponent,
     DetallesEstudioComponent,
     PerfilProyectoComponent,
-    DetallesProyectoComponent
+    DetallesProyectoComponent,
+    UsuarioComponent,
+    FormUsuarioComponent,
+    LoginUsuarioComponent,
+    InicioComponent
   ],
   imports: [
     BrowserModule,

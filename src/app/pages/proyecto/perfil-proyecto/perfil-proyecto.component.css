@@ -1,0 +1,13 @@
+.contenedor{
+     background-color: #282c46;
+     border-radius:  5px;
+}
+.titulo{
+    margin-top: 10px;
+    height: 30px;
+    border-bottom: solid white 1px;
+   
+}
+.imagen{
+    height: 150px;
+}

@@ -8,6 +8,7 @@ import {map} from 'rxjs/operators'
   providedIn: 'root'
 })
 export class HabilidadService {
+  private urlEndPointRender:string= "https://portafolio-1t4s.onrender.com/api/habilidad"
   private urlEndPoint:string= "http://localhost:8080/api/habilidad"
   private httpHeaders = new HttpHeaders({'Content-type':'application/json'})
 
@@ -15,7 +16,7 @@ export class HabilidadService {
 
   // Opcion 1 metodo para oobtener los datos de la api 
   getHabilidades():Observable<Habilidad[]>{
-    return this.http.get<Habilidad[]>(this.urlEndPoint)
+    return this.http.get<Habilidad[]>(this.urlEndPointRender)
   }
 
 
@@ -25,23 +26,23 @@ export class HabilidadService {
 //       map( response  => response as Habilidad[]))
 //   }
   crear(habilidad:Habilidad):Observable<Habilidad>{
-    return this.http.post<Habilidad>(this.urlEndPoint,habilidad,{headers:this.httpHeaders})
+    return this.http.post<Habilidad>(this.urlEndPointRender,habilidad,{headers:this.httpHeaders})
   }
 
   getHabilidad(id:number):Observable<Habilidad>{
 
-    return this.http.get<Habilidad>(`${this.urlEndPoint}/${id}`)
+    return this.http.get<Habilidad>(`${this.urlEndPointRender}/${id}`)
   }
 
   actualizarHabilidad(habilidad:Habilidad):Observable<Habilidad>{
 
-    return this.http.put<Habilidad>( `${this.urlEndPoint}/${habilidad.idHabilidad}`,habilidad,{headers:this.httpHeaders})
+    return this.http.put<Habilidad>( `${this.urlEndPointRender}/${habilidad.idHabilidad}`,habilidad,{headers:this.httpHeaders})
 
   }
 
   borrar(id:number):Observable<Habilidad>{
 
-    return this.http.delete<Habilidad>( `${this.urlEndPoint}/${id}`,{headers:this.httpHeaders})
+    return this.http.delete<Habilidad>( `${this.urlEndPointRender}/${id}`,{headers:this.httpHeaders})
 
   }
    

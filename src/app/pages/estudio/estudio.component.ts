@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Estudio } from 'src/app/core/entidades/estudio';
 import { EstudioService } from 'src/app/core/servicios/estudio.service';
+import { UsuarioService } from 'src/app/core/servicios/usuario.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -10,15 +11,16 @@ import Swal from 'sweetalert2';
 })
 export class EstudioComponent {
   estudios?:Estudio[];
+  admin:boolean = false
 
 
-
-  constructor(private estudioSevicio:EstudioService){}
+  constructor(private estudioSevicio:EstudioService,private usuarioServicio : UsuarioService){}
  
   ngOnInit(){
+    this.admin = this.usuarioServicio.comprobarAdmin()
     this.estudioSevicio.getEstudios().subscribe(
       estudios => this.estudios=estudios
-    ) 
+    )  
   }
 
 

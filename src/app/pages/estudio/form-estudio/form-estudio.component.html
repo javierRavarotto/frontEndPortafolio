@@ -1,67 +1,83 @@
 <div class="row justify-content-center mt-5">
    <b class="card-header col-12 text-center">{{titulo}}</b>
+   <div class="col-1 previa text-center ">
+      <div class="col-12 text-start">
+         <label class="col-12  mb-2 text-start" for="nombre"> Vista previa</label>
+      </div>
+      
+         <label class="col-12  mb-2 text-start" for="nombre"> Establecimiento</label>
+         <img class="col-12" src={{estudio.urlImagen}} alt="">
+      
+         <label class="col-12  mb-2 text-start" for="nombre"> certificado</label>
+      <img class="col-12" src={{estudio.urlCertificado}} alt="">
+   </div>
    <div class="row justify-content-center">
       <form class="col-12 text-center">
          <div class="m-2 col-10  ">
             <label class="col-2 text-end m-2" for="nombre"> Nombre</label>
-            <input type="text" class="col-2"  [(ngModel)]="estudio.nombre" name="nombre">
+            <input type="text" class="col-2" [(ngModel)]="estudio.nombre" name="nombre">
          </div>
          <div class="m-2 col-10  ">
-            <label class="col-2 text-end m-2"  for="horasCursadas "> Horas cursadas</label>
-           
-               <input type="text" class="col-2"   [(ngModel)]="estudio.horasCursadas" name="horasCursadas">
-            
+            <label class="col-2 text-end m-2" for="horasCursadas "> Horas cursadas</label>
+
+            <input type="text" class="col-2" [(ngModel)]="estudio.horasCursadas" name="horasCursadas">
+
+         </div>
+         <div class="m-2 col-10" style=display:none>
+            <label class="col-2 text-end m-2" for="urlImagenCertificado"> Url imagen certificado</label>
+            <input type="text" class="col-2" [(ngModel)]="estudio.urlCertificado" name="urlImagenCertificado">
+         </div>
+         <div class="m-2 col-10  " >
+            <label class="col-2 text-end m-2" readonly  for="imagen">Imagen establecimiento</label>
+            <input  class="col-2 text-end m-2" (change)="capturarEstablecimiento($event)" type="file">
          </div>
          <div class="m-2 col-10  ">
-            <label class="col-2 text-end m-2"  for="urlImagenCertificado"> Url imagen certificado</label>
-           
-               <input type="text"  class="col-2"  [(ngModel)]="estudio.urlCertificado" name="urlImagenCertificado">
-            
+            <label class="col-2 text-end m-2" for="fechaInicio "> Fecha inicio</label>
+
+            <input type="date" class="col-2" [(ngModel)]="estudio.fechaInicio" name="fechaInicio">
+
          </div>
          <div class="m-2 col-10  ">
-            <label class="col-2 text-end m-2"  for="fechaInicio "> Fecha inicio</label>
-          
-               <input type="date" class="col-2"   [(ngModel)]="estudio.fechaInicio" name="fechaInicio">
-         
+            <label class="col-2 text-end m-2" for="fechaFin "> Fecha fin</label>
+
+            <input type="date" class="col-2" [(ngModel)]="estudio.fechaFin" name="fechaFin">
+
          </div>
          <div class="m-2 col-10  ">
-            <label class="col-2 text-end m-2"  for="fechaFin "> Fecha fin</label>
-          
-               <input type="date" class="col-2"   [(ngModel)]="estudio.fechaFin" name="fechaFin">
-             
+            <label class="col-2 text-end m-2" for="estado "> Estado</label>
+
+            <input type="text" class="col-2" [(ngModel)]="estudio.estado" name="estado">
+
          </div>
          <div class="m-2 col-10  ">
-            <label class="col-2 text-end m-2"  for="estado "> Estado</label>
-       
-               <input type="text"  class="col-2"  [(ngModel)]="estudio.estado" name="estado">
-          
+            <label class="col-2 text-end m-2" for="establecimiento "> Establecimiento</label>
+
+            <input type="text" class="col-2" [(ngModel)]="estudio.establecimiento" name="establecimiento">
+
          </div>
-         <div class="m-2 col-10  ">
-            <label class="col-2 text-end m-2"  for="establecimiento "> Establecimiento</label>
-           
-               <input type="text" class="col-2"   [(ngModel)]="estudio.establecimiento" name="establecimiento">
-            
-         </div>
-         <div class="m-2 col-12 text-start ">
+         <div class="m-2 col-12 text-start " style=display:none>
             <div class="col-10 text-center">
-            <label  class="col-3.2  text-center m-1 " for="urlImagenEstablecimiento"> Url imagen establecimiento</label>
-           
-               <input type="text"  class="col-2 text-start"  [(ngModel)]="estudio.urlImagen"  name="urlImagenEstablecimiento">
+               <label class="col-3.2  text-center m-1 " for="urlImagenEstablecimiento"> Url imagen establecimiento</label>
+               <input type="text" class="col-2 text-start" [(ngModel)]="estudio.urlImagen" name="urlImagenEstablecimiento">
             </div>
          </div>
+         <div class="m-2 col-10"  >
+            <label class="col-2 text-end m-2" readonly  for="imagen">Imagen certificado</label>
+            <input  class="col-2 text-end m-2" (change)="capturarCertificado($event)" type="file">
+         </div>
          <div class="m-2 col-10  ">
-            <label class="col-2 text-end m-2"  for="descripcion"> Descripcion</label>
-           
-               <input type="text"  class="col-2"  [(ngModel)]="estudio.descripcion" name="descripcion">
-           
+            <label class="col-2 text-end m-2" for="descripcion"> Descripcion</label>
+
+            <input type="text" class="col-2" [(ngModel)]="estudio.descripcion" name="descripcion">
+
          </div>
          <div>
             <div>
-               <button class="botonCrear "  (click)="crear()" *ngIf="!estudio.idEstudio else elseBlock ">Crear</button>
+               <button class="botonCrear " (click)="crear()" *ngIf="!estudio.idEstudio else elseBlock ">Crear</button>
 
                <ng-template #elseBlock>
 
-                  <button (click)="actualizarEstudio()">Editar</button>
+                  <button (click)="actualizarEstudio()" class="botonCrear">Editar</button>
 
                </ng-template>
             </div>

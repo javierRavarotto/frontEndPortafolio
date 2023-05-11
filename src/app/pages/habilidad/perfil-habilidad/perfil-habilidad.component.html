@@ -1,11 +1,12 @@
 
-
-  <div class="row justify-content-center">
-    <div class="card text-white bg-primary mb-3  m-2"  style="max-width: 9rem;" *ngFor="let habilidad of habilidades">
+<h3 class="text-center">Habilidades</h3>
+  <div class="row justify-content-center ">
+    <div class=" mb-3  m-2 contenedor"  style="max-width: 9rem;" *ngFor="let habilidad of habilidades">
     
-      <div class="card-header mia text-center col-12 " >{{habilidad.nombre}}</div>
-      <div class="card-body justify-content-center row"  >
-        <img class="col-12 text-center"  src={{habilidad.urlImagen}} alt="">
+      <div class="text-center col-12 titulo" >{{habilidad.nombre}}</div>
+      <div class=" justify-content-center row mt-2 mb-2"  >
+        <img class="col-7 text-center imagen"  src={{habilidad.urlImagen}} alt="">
+
       </div>
     </div>
-  </div>
+  </div> 

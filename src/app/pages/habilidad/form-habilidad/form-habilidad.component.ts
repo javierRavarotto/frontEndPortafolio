@@ -6,6 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { HabilidadService } from 'src/app/core/servicios/habilidad.service';
 import swal from 'sweetalert2'
+import { ImgbbService } from 'src/app/core/servicios/imgbb.service';
 
 @Component({
   selector: 'app-form-habilidad',
@@ -16,10 +17,10 @@ export class FormHabilidadComponent  implements OnInit{
   
   public habilidad : Habilidad= new Habilidad();
   public titulo:String="Crear Hablidad"
-
+  public archivosCapturados:any=[]
   
 
-  constructor (private builder:FormBuilder,private router:Router ,private habilidadServicio : HabilidadService,private activateRouter:ActivatedRoute){
+  constructor (private builder:FormBuilder,private router:Router ,private imgbbservicio:ImgbbService,private habilidadServicio : HabilidadService,private activateRouter:ActivatedRoute){
   
  
   };
@@ -51,5 +52,10 @@ export class FormHabilidadComponent  implements OnInit{
             this.router.navigate(['/habilidad'])
             swal.fire('Habilidad ', `Habiliadad ${habilidad.nombre} actualizada con exito`,'success')
           })
+      }
+      capturar(event:any):any{
+        const capturado = event.target.files[0]
+        this.archivosCapturados.push(capturado)
+        this.imgbbservicio.uploadImage(capturado).subscribe(data=> this.habilidad.urlImagen=data.data.display_url)
       }
   }

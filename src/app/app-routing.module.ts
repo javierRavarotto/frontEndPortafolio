@@ -11,6 +11,10 @@ import { PerfilEstudioComponent } from './pages/estudio/perfil-estudio/perfil-es
 import { DetallesEstudioComponent } from './pages/estudio/detalles-estudio/detalles-estudio.component';
 import { PerfilProyectoComponent } from './pages/proyecto/perfil-proyecto/perfil-proyecto.component';
 import { DetallesProyectoComponent } from './pages/proyecto/detalles-proyecto/detalles-proyecto.component';
+import { FormUsuarioComponent } from './pages/usuario/form-usuario/form-usuario.component';
+import { UsuarioComponent } from './pages/usuario/usuario.component';
+import { LoginUsuarioComponent } from './pages/usuario/login-usuario/login-usuario.component';
+import { InicioComponent } from './pages/inicio/inicio.component';
 
 const routes: Routes = [
   {path: 'habilidad', component: HabilidadComponent},
@@ -23,12 +27,14 @@ const routes: Routes = [
   {path: 'proyecto', component: ProyectoComponent},
   {path: 'proyecto/crear', component: FormProyectoComponent},
   {path: 'proyecto/editar/:id', component: FormProyectoComponent}, 
-  {path: 'proyecto/detalles/:id', component: DetallesProyectoComponent
-}, 
-  // {path: '', component: PerfilHabilidadComponent}, 
-
-  // {path: '', component: PerfilEstudioComponent}, 
-  {path: '', component: PerfilProyectoComponent}, 
+  {path: 'proyecto/detalles/:id', component: DetallesProyectoComponent}, 
+  {path: '', component: InicioComponent},
+  {path: 'usuario', component: UsuarioComponent},
+  {path: 'usuario/crear', component: FormUsuarioComponent},
+  {path: 'usuario/editar/:id', component: FormUsuarioComponent},
+  {path: 'inicioSesion', component: LoginUsuarioComponent},
+  {path: 'inicioSesion/:nombre', component: LoginUsuarioComponent},
+  
 ];
 
 @NgModule({

@@ -1,7 +1,14 @@
 footer{
-    margin-top: 80vh;
-   
+    position: fixed;
+    bottom: 0px;
+    width: 100%; 
+    padding: 6px; 
+    
 }
 a{
     height: 30px;
 }
+.contenedor{
+    height: 40px;
+}
+

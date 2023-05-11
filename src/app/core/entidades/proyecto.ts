@@ -4,6 +4,7 @@ export class Proyecto {
     urlGithub?:string;
     imagen?:String;
     descripcion?:String;
+    arc?:File;
 }
 
 

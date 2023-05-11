@@ -3,6 +3,7 @@ import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Estudio } from 'src/app/core/entidades/estudio';
 import { EstudioService } from 'src/app/core/servicios/estudio.service';
+import { ImgbbService } from 'src/app/core/servicios/imgbb.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -15,12 +16,9 @@ export class FormEstudioComponent {
 
   public estudio :Estudio= new Estudio(); 
   public titulo:String="Crear Estudio"
-
-  
-
-  constructor (private builder:FormBuilder,private router:Router ,private estudioServicio : EstudioService,
+  constructor (private builder:FormBuilder,private router:Router ,private estudioServicio : EstudioService,private imgbbservicio:ImgbbService,
     private activateRouter:ActivatedRoute){};
- 
+    public archivosCapturados:any=[]
   ngOnInit(): void {
     this.cargarEstudio();
   }
@@ -50,6 +48,17 @@ export class FormEstudioComponent {
             this.router.navigate(['/estudio'])
             Swal.fire('Estudio ', `Estudio ${estudio.nombre} actualizado con exito`,'success')
           })
+      }
+      
+      capturarCertificado(event:any):any{
+        const capturado = event.target.files[0]
+        this.archivosCapturados.push(capturado)
+        this.imgbbservicio.uploadImage(capturado).subscribe(data=> this.estudio.urlCertificado=data.data.display_url)
+      }
+      capturarEstablecimiento(event:any):any{
+        const capturado = event.target.files[0]
+        this.archivosCapturados.push(capturado)
+        this.imgbbservicio.uploadImage(capturado).subscribe(data=> this.estudio.urlImagen=data.data.display_url)
       }
 
 }

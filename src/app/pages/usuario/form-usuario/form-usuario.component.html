@@ -1,0 +1,25 @@
+<div class="row justify-content-center mt-5">
+    <b class="card-header  col-12 text-center">{{titulo}}</b>
+    <div class="row justify-content-center">
+       <form class="col-12 text-center">
+          <div class="m-2 col-10  ">
+             <label class="col-2 text-end m-2" for="nombre"> Nombre</label>
+             <input class="col-2" type="text" [(ngModel)]="usuario.nombre" name="nombre">
+          </div>
+          <div class="m-2 col-10  ">
+             <label class="col-2 text-end m-2"  for="contrasena"> Contraseña</label>
+            
+                <input type="password"  class="col-2"  [(ngModel)]="usuario.contrasena" name="contrasena">
+             
+          </div>
+          <div>
+             <div>
+                <button (click)="crear()" class="botonCrear" *ngIf="!usuario.idUsuario else elseBlock ">Crear</button>
+                <ng-template #elseBlock>
+                   <button class="botonCrear" (click)="actualizarUsuario()">Editar</button>
+                </ng-template>
+             </div>
+          </div>
+       </form>
+    </div>
+ </div>

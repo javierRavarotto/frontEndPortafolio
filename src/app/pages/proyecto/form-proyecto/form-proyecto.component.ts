@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { Proyecto } from 'src/app/core/entidades/proyecto';
+import { ImgbbService } from 'src/app/core/servicios/imgbb.service';
 import { ProyectoService } from 'src/app/core/servicios/proyecto.service';
 import Swal from 'sweetalert2';
 
@@ -17,9 +19,9 @@ export class FormProyectoComponent {
   public proyecto : Proyecto= new Proyecto();
   public titulo:String="Crear Proyecto"
 
-  
+  public archivosCapturados:any=[]
 
-  constructor (private builder:FormBuilder,private router:Router ,private proyectoServicio : ProyectoService,private activateRouter:ActivatedRoute){
+  constructor (private builder:FormBuilder,private router:Router ,private proyectoServicio : ProyectoService,private activateRouter:ActivatedRoute,private imgbbservicio:ImgbbService){
   };
  
   ngOnInit(): void {
@@ -51,4 +53,12 @@ export class FormProyectoComponent {
           })
       }
 
+      capturar(event:any):any{
+        const capturado = event.target.files[0]
+        this.archivosCapturados.push(capturado)
+        this.imgbbservicio.uploadImage(capturado).subscribe(data=> this.proyecto.imagen=data.data.display_url)
+      }
+
+     
+       
 }

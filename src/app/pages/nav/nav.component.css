@@ -1,0 +1,14 @@
+.navegacion{
+ position: fixed;
+ width: 100%;
+ height: 10px;
+ justify-content: space-between;
+ top: 0;
+}
+
+.contenedor{
+    height: 65px;
+}
+.destinos{
+    cursor: pointer;
+}

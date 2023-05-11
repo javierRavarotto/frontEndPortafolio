@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Habilidad } from 'src/app/core/entidades/habilidad';
+import { Usuario } from 'src/app/core/entidades/usuario';
+import { GlobalService } from 'src/app/core/servicios/global.service';
 import {  HabilidadService } from 'src/app/core/servicios/habilidad.service';
+import { UsuarioService } from 'src/app/core/servicios/usuario.service';
 import swal from 'sweetalert2'
 @Component({
   selector: 'app-habilidad',
@@ -8,12 +12,15 @@ import swal from 'sweetalert2'
   styleUrls: ['./habilidad.component.css']
 })
 export class HabilidadComponent {
-
+  admin:boolean = false
   habilidades?:Habilidad[];
 
-  constructor(private habilidadSevicio:HabilidadService){}
+  constructor(private habilidadSevicio:HabilidadService,private usuarioServicio : UsuarioService,private globalServicio:GlobalService){}
  
 ngOnInit(){
+ 
+    this.admin = this.usuarioServicio.comprobarAdmin()
+
   this.habilidadSevicio.getHabilidades().subscribe(
     habilidades => this.habilidades=habilidades
   ) 

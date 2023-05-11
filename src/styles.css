@@ -25,10 +25,14 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
+
 	line-height: 1;
-	background:linear-gradient(to right,rgb(22, 35, 56), rgb(41, 66, 105)); 
+  background:linear-gradient(to right,#0d1032, #222165); 
  	color:white;
 }
+
+
+
 ol, ul {
 	list-style: none;
 }
@@ -44,7 +48,9 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
+*{
+  font-family: 'Courier New', Courier, monospace;
+}
 a {
 	color: inherit;
 	text-decoration: none;
@@ -55,6 +61,7 @@ a {
     color: white;
     padding: 8px;
     border-radius: 5px;
+    text-decoration: none;
   
   }
   .botonEliminar{
