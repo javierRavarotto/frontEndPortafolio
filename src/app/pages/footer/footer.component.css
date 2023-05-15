@@ -7,8 +7,15 @@ footer{
 }
 a{
     height: 30px;
+    text-decoration: none;
+    color: white;
 }
 .contenedor{
     height: 40px;
 }
+.img{
+    background-color: rgb(243, 240, 240);
+    border-radius: 10px;
+    
+    }
 
