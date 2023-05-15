@@ -44,7 +44,7 @@ export class LoginUsuarioComponent {
           this.error= "Usuario o contraseña incorrecta"
         }
       } catch (error) {
-        console.log("esto asdasd")
+        
       }
       
       

@@ -16,11 +16,9 @@ export class InicioComponent {
   };
 
   ngOnInit(): void {
-    this.globalServicio.dis.subscribe(lugar =>(this.navegar(lugar)))
+    this.globalServicio.disparador.subscribe(lugar =>(this.navegar(lugar)))
   }
-
   navegar(lugar:any){
-
     if (lugar=="Proyectos") {
       let proyecto = this.proyecto.nativeElement
       proyecto.scrollIntoView()

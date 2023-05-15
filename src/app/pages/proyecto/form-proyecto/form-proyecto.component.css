@@ -1,4 +1,25 @@
-.previa{
+.previaGrande{
     position: absolute;
     margin-left: 25%;
+}
+.previaChica{
+    display: none;
+}
+textarea{
+    height: 70px;
+    width: 100%;
+    resize: none;
+    background-color: transparent;
+    color: white;
+}
+
+@media (max-width: 576px) {
+    .previaGrande{
+        margin-left: none;
+        position: relative;
+        display: none;
+    }
+    .previaChica{
+       display: block;
+  }
 }

@@ -12,7 +12,7 @@ import Swal from 'sweetalert2';
 })
 export class FormUsuarioComponent {
 
-
+  public error:string="";
   public usuario : Usuario= new Usuario();
   public titulo:String="Crear Usuario"
 
@@ -28,8 +28,13 @@ export class FormUsuarioComponent {
   public crear():void{
     this.usuarioServicio.crear(this.usuario)
     .subscribe( usuario => {
+      if(usuario.idUsuario != null){
         this.router.navigate(['/usuario'])
-         Swal.fire('Nuevo Usuario ', `Usuario ${usuario.nombre} creado con exito`,'success')
+        Swal.fire('Nuevo Usuario ', `Usuario ${usuario.nombre} creado con exito`,'success')
+      }else{
+        this.error= "El nombre de Usuario ya esta en uso"
+      }
+        
       } 
     )}
 
@@ -49,10 +54,4 @@ export class FormUsuarioComponent {
             Swal.fire('Usuario ', `Usuario ${usuario.nombre} actualizada con exito`,'success')
           })
       }
-
-      
-
-
-
-
 }

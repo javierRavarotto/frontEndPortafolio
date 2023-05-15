@@ -1,25 +1,24 @@
-<div class="row justify-content-center mt-5">
-   <b class="card-header  col-12 text-center">{{titulo}}</b>
-   <div class="col-1 previa ">
-      <div class="col-12 text-start">
-         <label class="col-12  mb-2 text-start" for="nombre"> Vista previa</label>
-      </div>
-         <img class="col-12"  src={{habilidad.urlImagen}} alt="">
-      </div>
+<div class="margen"></div>
+<div class="row justify-content-center mt-5 text-end">
+   <b class="card-header  col-12 mb-1 text-center">{{titulo}}</b>
+   <div class="col-12 col-sm-2 previaGrande">
+      <label class=" mb-2 col-lg-12  col-5 ms-4  text-center" for="nombre"> Vista previa</label>
+      <img class="col-4 col-sm-10 ms-4 "  src={{habilidad.urlImagen}} alt="">
+   </div>
    <div class="row justify-content-center">
       <form class="col-12 text-center">
          <div class="m-2 col-10  ">
-            <label class="col-2 text-end m-2" for="nombre "> Nombre</label>
-            <input class="col-2" type="text" [(ngModel)]="habilidad.nombre" name="nombre">
+            <label class="col-3 col-sm-2 text-end m-2" for="nombre "> Nombre</label>
+            <input class="col-6 col-sm-2" type="text" [(ngModel)]="habilidad.nombre" name="nombre">
          </div>
          <div class="m-2 col-10 " style=display:none>
-            <label class="col-2 text-end m-2" for="urlImagen">Url imagen</label>
-            <input class="col-2" type="text" [(ngModel)]="habilidad.urlImagen" name="urlImagen">
+            <label class="col-3 col-sm-2 text-end m-2" for="urlImagen">Url imagen</label>
+            <input class="col-6 col-sm-2" type="text" [(ngModel)]="habilidad.urlImagen" name="urlImagen">
          </div>
 
          <div class="m-2 col-10  " >
-            <label class="col-2 text-end m-2" readonly  for="imagen">imagen</label>
-            <input  class="col-2 text-end m-2" (change)="capturar($event)" type="file">
+            <label class="col-3 col-sm-2 text-end m-2" readonly  for="imagen">imagen</label>
+            <input  class="col-6 col-sm-2 text-end m-2" (change)="capturar($event)" type="file">
          </div>
 
 
@@ -30,5 +29,9 @@
             </ng-template>
          </div>
       </form>
+      <div class="col-12 col-sm-1 previaChica text-center ">
+         <label class=" mb-2 mt-3 col-12 text-center" for="nombre"> Vista previa</label>
+         <img class=" col-10"  src={{habilidad.urlImagen}} alt="">
+      </div>
    </div>
 </div>

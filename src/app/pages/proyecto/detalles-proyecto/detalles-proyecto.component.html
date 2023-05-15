@@ -1,20 +1,41 @@
-
+<!-- <div class="margen"></div>
 <div>
-    <div class="row m-3">
-       
-        <div class="row">
-        <label class="col-1 text-center">{{proyecto.nombre}} </label>
-        
+  <div class="text-center mt-5 col-12">
+    <div class="col-3">
+      <label class="col-2">{{proyecto.nombre}}</label>
     </div>
+    <div class="col-12">
+      <a href="{{proyecto.urlGithub}}"> <img src="https://i.ibb.co/WKtTzGv/github.png" class="col-1" alt=""></a>
     </div>
-    
-  
-    <div class="row justify-content-center">   
-      <label  class="col-10 mt-5" for="">{{proyecto.descripcion}}
-    </label>  
-        </div>
-  
-
+<div class="col-5">
+  <img src="{{proyecto.imagen}}" alt="">
  
 </div>
+ </div>
+
+  <div class="col-12 text-center">
+    <label class="col-10" for="">{{proyecto.descripcion}}
+    </label>
+  </div>
+</div> -->
+
+
+<div class="margen"></div>
+
+  
+  <div class="col-12 text-center">
+    <label class="col-sm-1 col-3  mb-2 mt-2 me-5">{{proyecto.nombre}}</label>
+  </div>
+  <div class="col-12 text-center">
+    <img src="{{proyecto.imagen}}" alt="">
+  </div> 
+  <div class="col-12 text-center">      
+    <a href="{{proyecto.urlGithub}}" class="col-12" >
+    <img src="https://i.ibb.co/WKtTzGv/github.png" class="col-xl-1 col-1 mt-3 img" alt="">
+  </a>
+</div>
+  <div class="col-12 text-center mt-3">
+    <label class="col-10" for="">{{proyecto.descripcion}}
+    </label>
+  </div>
 

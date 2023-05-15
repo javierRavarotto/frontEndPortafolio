@@ -1,20 +1,43 @@
-<div class="contenedor">
-    <div class="navegacion">
-        <div class="navehacion2">
-            <nav class="navbar bg-dark text-white  text-center gx-0 " data-bs-theme="dark">
-                <a #inicio (click)="navInicio()" class="nav-link col-2" [routerLink]="['/']">Inicio</a>
-                <a #proyecto (click)="navProyecto()" class="nav-link col-2 destinos" [routerLink]="['/']" >Proyectos</a>
-                <a #estudios (click)="navEstudios()" class="nav-link col-2 destinos" [routerLink]="['/']">Estudios</a>
-                <a #habilidad (click)="navHanilidad()" class="nav-link col-2 destinos"  [routerLink]="['/']">Habilidad</a>
-                <a class="nav-link col-2 botonCrear" [routerLink]="['inicioSesion']" *ngIf="!usuario">Inicio sesion</a>
-                <a class="nav-link col-2  botonEliminar" [routerLink]="['']" *ngIf="usuario" (click)="cerrarSesion()"> Cerrar sesion</a>
-            </nav>
-            <nav class="navbar bg-dark text-white  text-center gx-0 mb-5" data-bs-theme="dark" *ngIf="admin">
-                <a class="nav-link col-2" [routerLink]="['habilidad']">Habilidades Admin</a>
-                <a class="nav-link col-2" [routerLink]="['estudio']">Estudios Admin</a>
-                <a class="nav-link col-2" [routerLink]="['proyecto']">Proyectos Admin</a>
-                <a class="nav-link col-2" [routerLink]="['usuario']">usuarios Admin</a>
-            </nav>
+
+<div class="navegacion ">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-center gx-0 ">
+        <div class="text-end col-12 col-lg-2">
+            <button class="navbar-toggler " type="button" (click)="colapsar()">
+                <span class="navbar-toggler-icon"></span>
+            </button>
         </div>
-    </div>
+        <div [ngClass]="{'collapse' : bandera}" class="collapse navbar-collapse text-center" id="navbarSupportedContent">
+            <a #inicio (click)="navInicio()" class="nav-link col-12 col-lg-2  mb-2" [routerLink]="['/']"(click)="colapsar()">Inicio</a>
+            <a #proyecto (click)="navProyecto()" class="nav-link destinos col-12 col-lg-2 mb-2"
+                [routerLink]="['/']" (click)="colapsar()">Proyectos</a>
+            <a #estudios (click)="navEstudios()" class="nav-link    destinos col-12 col-lg-2 mb-2"
+                [routerLink]="['/']" (click)="colapsar()">Estudios</a>
+            <a #habilidad (click)="navHanilidad()" class="nav-link   destinos col-12 col-lg-2 mb-2"
+                [routerLink]="['/']" (click)="colapsar()">Habilidad</a>
+
+            <a class="nav-link col-12 col-lg-2 mb-2  botonCrear" [routerLink]="['inicioSesion']" *ngIf="!usuario"
+                (click)="colapsar()">Inicio
+                sesion</a>
+            <a class="nav-link col-12 col-lg-2 mb-2   botonEliminar" [routerLink]="['']" *ngIf="usuario"
+                (click)="cerrarSesion()" (click)="colapsar()"> Cerrar sesion</a>
+        </div>
+   
+    </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark gx-0 text-center">
+       
+        <div [ngClass]="{'collapse' : bandera}" class="collapse navbar-collapse text-center col-12" id="navbarSupportedContent"
+            *ngIf="admin">
+            <a class="nav-link destinos  col-lg-1 me-5 ms-5" [routerLink]="['proyecto']"
+                ></a>
+            <a class="nav-link destinos col-12 col-lg-2 mb-2 ms-lg-4" [routerLink]="['proyecto']"
+                (click)="colapsar()">Proyectos Admin</a>
+            <a class="nav-link destinos col-12 col-lg-2 mb-2" [routerLink]="['estudio']"
+                (click)="colapsar()">Estudios Admin</a>
+            <a class="nav-link destinos col-12 col-lg-2 mb-2" [routerLink]="['habilidad']"
+                (click)="colapsar()">Habilidades Admin</a>
+            <a class="nav-link destinos col-12 col-lg-2 mb-2" [routerLink]="['usuario']"
+                (click)="colapsar()">usuarios Admin</a>
+             
+        </div>
+    </nav>
 </div>

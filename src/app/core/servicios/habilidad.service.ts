@@ -2,21 +2,19 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Habilidad } from '../entidades/habilidad';
 import { of,Observable } from 'rxjs';
-import {map} from 'rxjs/operators'
+import { Url } from '../entidades/Url';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HabilidadService {
-  private urlEndPointRender:string= "https://portafolio-1t4s.onrender.com/api/habilidad"
-  private urlEndPoint:string= "http://localhost:8080/api/habilidad"
   private httpHeaders = new HttpHeaders({'Content-type':'application/json'})
-
+  private urlApi:string= Url.url +"habilidad"
   constructor(private http:HttpClient) { }
 
   // Opcion 1 metodo para oobtener los datos de la api 
   getHabilidades():Observable<Habilidad[]>{
-    return this.http.get<Habilidad[]>(this.urlEndPointRender)
+    return this.http.get<Habilidad[]>(this.urlApi)
   }
 
 
@@ -26,23 +24,23 @@ export class HabilidadService {
 //       map( response  => response as Habilidad[]))
 //   }
   crear(habilidad:Habilidad):Observable<Habilidad>{
-    return this.http.post<Habilidad>(this.urlEndPointRender,habilidad,{headers:this.httpHeaders})
+    return this.http.post<Habilidad>(this.urlApi,habilidad,{headers:this.httpHeaders})
   }
 
   getHabilidad(id:number):Observable<Habilidad>{
 
-    return this.http.get<Habilidad>(`${this.urlEndPointRender}/${id}`)
+    return this.http.get<Habilidad>(`${this.urlApi}/${id}`)
   }
 
   actualizarHabilidad(habilidad:Habilidad):Observable<Habilidad>{
 
-    return this.http.put<Habilidad>( `${this.urlEndPointRender}/${habilidad.idHabilidad}`,habilidad,{headers:this.httpHeaders})
+    return this.http.put<Habilidad>( `${this.urlApi}/${habilidad.idHabilidad}`,habilidad,{headers:this.httpHeaders})
 
   }
 
   borrar(id:number):Observable<Habilidad>{
 
-    return this.http.delete<Habilidad>( `${this.urlEndPointRender}/${id}`,{headers:this.httpHeaders})
+    return this.http.delete<Habilidad>( `${this.urlApi}/${id}`,{headers:this.httpHeaders})
 
   }
    

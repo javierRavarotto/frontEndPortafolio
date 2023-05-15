@@ -12,3 +12,11 @@
 .destinos{
     cursor: pointer;
 }
+
+.destinos:hover{
+    background-color: #222165;
+    border-radius: 60px;
+}
+.centro{
+    text-align: center;
+}

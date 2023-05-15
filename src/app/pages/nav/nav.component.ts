@@ -16,6 +16,7 @@ export class NavComponent {
   @ViewChild('habilidad') habilidad!: ElementRef;
   usuario: Usuario = new Usuario();
   admin: boolean = false
+  bandera:boolean=true
   constructor(private usuarioServicio: UsuarioService, private router: Router, private globalServicio: GlobalService) {
   };
   ngOnInit(): void {
@@ -36,16 +37,21 @@ export class NavComponent {
     window.location.reload();
   }
   navInicio() {
-    this.globalServicio.dis.emit(this.inicio.nativeElement.innerText)
+    this.globalServicio.disparador.emit(this.inicio.nativeElement.innerText)
   }
   navProyecto() {
-    this.globalServicio.dis.emit(this.proyecto.nativeElement.innerText)
+    this.globalServicio.disparador.emit(this.proyecto.nativeElement.innerText)
   }
   navEstudios() {
-    this.globalServicio.dis.emit(this.estudios.nativeElement.innerText)
+    this.globalServicio.disparador.emit(this.estudios.nativeElement.innerText)
   }
   navHanilidad() {
-    this.globalServicio.dis.emit(this.habilidad.nativeElement.innerText)
+    this.globalServicio.disparador.emit(this.habilidad.nativeElement.innerText)
+  }
+
+
+  colapsar(){
+    this.bandera=!this.bandera
   }
 
 }

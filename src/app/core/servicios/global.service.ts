@@ -1,10 +1,10 @@
-import { ElementRef, EventEmitter, Injectable, Output, ViewChild } from '@angular/core';
+import {  EventEmitter, Injectable, Output, ViewChild } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GlobalService {
-@Output() dis:EventEmitter<any>= new EventEmitter();
+@Output() disparador:EventEmitter<any>= new EventEmitter();
   constructor() { }
 
 }
